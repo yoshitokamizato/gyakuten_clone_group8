@@ -2,8 +2,8 @@
   <% @movies.each do |movie| %>
     <div class="text-center">
       <div class="col-xs-12">
-      <%= "#{movie.name}" %><br>
-      <iframe src=<%= "#{movie.url}" %> width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <%= "#{movie.name}" %><br>
+        <iframe src=<%= "#{movie.url}" %> width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
     </div><br><br>
   <% end %>
