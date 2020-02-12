@@ -2,6 +2,7 @@ class Movie < ApplicationRecord
 
   def self.import(path)
     list = []
+
     CSV.foreach(path, headers: true) do |row|
      list << {
       name: row["name"],
@@ -14,7 +15,6 @@ class Movie < ApplicationRecord
     puts "インポートに成功しました"
     rescue ActiveModel::UnknownAttributeError => invalid
     puts "インポートに失敗しました:#{invaild}"
-    
-   end
+  end
 
 end
