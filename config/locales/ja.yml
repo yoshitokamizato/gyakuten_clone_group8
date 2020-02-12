@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              too_short: "が短すぎます"
+            password_confirmation:
+              confirmation: "確認用パスワードが異なります"
