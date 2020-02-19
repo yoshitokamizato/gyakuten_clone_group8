@@ -1,3 +1,11 @@
-<h1>movies#indexに対応するビュー</h1>
-<p>moviesコントローラのindexアクションに対応するビューファイルです。</p>
-<p>(ビューの作成は別タスクとのことなので、ビューの作成担当者は<br>このページを書き換えてください by 照屋)</p>
+<div class="container">
+  <% @movies.each do |movie| %>
+    <div class="text-center my-4">
+      <div class="col-xs-12">
+        <%= "#{movie.name}" %><br>
+        <iframe src=<%= "#{movie.url}" %> width="560" height="315" frameborder="0" style="border:0" allowfullscreen></iframe>
+      </div>
+    </div>
+  <% end %>
+  <%= paginate @movies %>
+</div>
