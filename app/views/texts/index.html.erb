@@ -1,0 +1,23 @@
+<div class="container">
+  <h2 class="text-center">Railsテキスト教材</h2>
+  <div class="text-container">
+    <table class="table table-striped">
+      <thead class="bg-danger text-white">
+        <tr>
+          <th class="w-1">No.</th>
+          <th class="w-2">ジャンル</th>
+          <th class="w-5">内容</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @texts.each.with_index(1) do |text, i| %>
+          <tr>
+            <td><%= i %></td>
+            <td><%= text.genre %></td>
+            <td><%= link_to text.title, text_path(text), target: :_blank %></td>
+          </tr>
+        <% end %>
+      </tbody>  
+    </table>
+  </div>
+</div>
