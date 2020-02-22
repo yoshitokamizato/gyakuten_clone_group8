@@ -12,12 +12,17 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem "devise"
-
+gem "kaminari"
+gem 'kaminari-bootstrap'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
+
 # 多言語対応
 gem 'rails-i18n', '~> 5.1'
 gem 'devise-i18n'
+
+gem 'redcarpet', '~> 2.3.0'
+gem 'coderay'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
