@@ -1,0 +1,22 @@
+#question-container{
+  width: 100%;
+  padding: 50px 0 80px 0;
+  max-width: 710px;
+  margin: 0 auto;
+}
+.question{
+  padding: 10px;
+  .card{
+    border-width: 2px;
+  }
+  .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+  }
+  .title{
+    font-size: 22px;
+    line-height: 2;
+  }
+}
