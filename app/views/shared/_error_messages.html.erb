@@ -1,0 +1,8 @@
+<% if @question.errors.any? %>
+  <p class="text-left alert alert-danger" role="alert"><%= @question.errors.count %>つのエラーがあります。</p>
+  <% @question.errors.full_messages.each do |message| %>
+      <ul>
+        <li class="text-left text-danger"><p><%= message %></p></li>
+      </ul>
+    <% end %>
+<% end %>

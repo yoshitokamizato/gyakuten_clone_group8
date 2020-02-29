@@ -1,0 +1,46 @@
+<div id="question-container">
+  <div class="container">
+    <div class="text-center my-4">
+      <%= render "shared/notifications" %>
+      <h2 class="text-left">新規投稿</h2>
+      <%= render 'shared/error_messages'%>
+
+      <%= form_for @question do |f| %>
+        <div class="field">
+          <p class="text-left">【質問】</p>
+          <%= f.text_area :title, class: 'form-control', rows: 5 %>
+        </div></br>
+
+        <div class="field">
+        <p class="text-left">【詳細】</p>
+          <%= f.text_area :detail, class: 'form-control', rows: 5 %>
+        </div></br>
+
+        <%= f.submit "送信", class: "btn btn-primary btn-lg btn-block", data: {confirm: "投稿しますか？"} %>
+      <% end %>
+
+      <div class="question">
+        <% @questions.each do |question| %>
+          <div class="text-center my-5">
+            <div class="card rounded-lg">
+              <a href="#" class="card-body text-dark">
+                <div class="row">
+                  <div class="col-md-7">
+                    <div class="title-container">
+                    <p class="title"><%= question.title %></p>
+                    </div>
+                  </div>
+                  <div class="col-md-5 text-muted">
+                <p class="text-right">質問日　<%= l question.created_at %></p>
+                <p class="text-right"><%= question.view %> Views</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+    </div>  
+  </div>
+</div>
