@@ -1,9 +1,6 @@
-<% flash.each do |key, value| %>
-  <%# <%= content_tag(:div, value, class: "flash flash__#{key} alert alert-danger") %>
-  <div class="flash flash_<%= key %> alert alert-danger alert-dismissible">
-    <%= value %>
-    <button type="button" class="close" data-dismiss="alert" area-label="閉じる">
-      <span aria-hidden="true">&times;</span>
-    </button>
+<% flash.each do |name, msg| %>
+  <div class="alert alert-<%= name %>" role="alert" id="alert">
+    <a href="#" class="close" data-dismiss="alert">×</a>
+    <%= msg %>
   </div>
 <% end %>

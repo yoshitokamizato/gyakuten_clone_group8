@@ -23,7 +23,6 @@ gem 'devise-i18n'
 
 gem 'redcarpet', '~> 2.3.0'
 gem 'coderay'
-gem 'rails-i18n'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

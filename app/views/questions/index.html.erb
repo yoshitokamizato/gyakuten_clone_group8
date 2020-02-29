@@ -1,27 +1,19 @@
 <div id="question-container">
   <div class="container">
     <div class="text-center my-4">
-
-    <% if flash[:notice] %>
-  <p class="text-left"><%= flash.now[:notice] %></p>
-    <% end %>
-    
-    <% if flash[:alert] %>
-      <p class="text-left"><%= flash.now[:alert] %></p>
-    <% end %>
-
+      <%= render "shared/notifications" %>
       <h2 class="text-left">新規投稿</h2>
       <%= render 'shared/error_messages'%>
 
       <%= form_for @question do |f| %>
         <div class="field">
           <p class="text-left">【質問】</p>
-          <%= f.text_area :title, :size =>"80x5" %>
+          <%= f.text_area :title, class: 'form-control', rows: 5 %>
         </div></br>
 
         <div class="field">
         <p class="text-left">【詳細】</p>
-          <%= f.text_area :detail, :size =>"80x5" %>
+          <%= f.text_area :detail, class: 'form-control', rows: 5 %>
         </div></br>
 
         <%= f.submit "送信", class: "btn btn-primary btn-lg btn-block", data: {confirm: "投稿しますか？"} %>
@@ -30,7 +22,7 @@
       <div class="question">
         <% @questions.each do |question| %>
           <div class="text-center my-5">
-            <div class="card border-dark rounded-lg">
+            <div class="card rounded-lg">
               <a href="#" class="card-body text-dark">
                 <div class="row">
                   <div class="col-md-7">
@@ -39,7 +31,7 @@
                     </div>
                   </div>
                   <div class="col-md-5 text-muted">
-                <p class="text-right">質問日　<%= question.created_at.strftime('%Y年%m月%d日') %></p>
+                <p class="text-right">質問日　<%= l question.created_at %></p>
                 <p class="text-right"><%= question.view %> Views</p>
                   </div>
                 </div>

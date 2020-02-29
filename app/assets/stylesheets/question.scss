@@ -8,6 +8,14 @@
   padding: 10px;
   .card{
     border-width: 2px;
+    border-color: black;
+    transform: translateY(3px);
+    transition: 0.3s;
+  }
+  .card:hover{
+    border-color: red;
+    transform: translateY(-3px);
+    transition: 0.3s;
   }
   .row{
     display: flex;
@@ -18,5 +26,9 @@
   .title{
     font-size: 22px;
     line-height: 2;
+  }
+  a { text-decoration: none;}
+  a:hover { 
+    text-decoration: none;
   }
 }

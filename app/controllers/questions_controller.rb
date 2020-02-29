@@ -13,7 +13,6 @@ class QuestionsController < ApplicationController
       flash[:notice] = '投稿に成功しました'
       redirect_to questions_path
     rescue
-      flash.now[:alert] = '投稿に失敗しました'
       render :index
     end
   end
