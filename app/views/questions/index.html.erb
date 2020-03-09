@@ -23,7 +23,7 @@
         <% @questions.each do |question| %>
           <div class="text-center my-5">
             <div class="card rounded-lg">
-              <a href="#" class="card-body text-dark">
+              <%= link_to question_path(question), class: "card-body text-dark" do %>
                 <div class="row">
                   <div class="col-md-7">
                     <div class="title-container">
@@ -35,7 +35,7 @@
                 <p class="text-right"><%= question.view %> Views</p>
                   </div>
                 </div>
-              </a>
+              <% end %>
             </div>
           </div>
         <% end %>
