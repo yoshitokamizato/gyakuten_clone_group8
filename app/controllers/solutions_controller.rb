@@ -3,11 +3,10 @@ class SolutionsController < ApplicationController
     @question = Question.find(params[:question_id])
     @solution = Solution.new(solution_params)
     @solution.question_id = @question.id
-    begin
-    @solution.save!
+    if @solution.save
       flash[:notice] = '投稿に成功しました'
       redirect_to question_path(@question)
-    rescue
+    else
       render template: "questions/show"
     end
   end

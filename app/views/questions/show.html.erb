@@ -18,8 +18,8 @@
     <hr>
 
     <div class="solution">
-      <h3>【回答】</h3>
-      <% @question.solutions.each do |solution| %>
+      <% @question.solutions.each.with_index(1) do |solution, i| %>
+        <h3>【回答<%= i %>】</h3>
         <%= markdown(solution.solution_content).html_safe %>
       <% end %>
     </div>
@@ -27,7 +27,7 @@
 
   <div class="container">
     <h1>回答投稿</h1>
-    <%= form_for [@question, @solution] do |f| %>
+    <%= form_with(model: [@question, @solution], local: true) do |f| %>
       <div class="field">
         <p class="text-left">【回答】</p>
         <%= f.text_area :solution_content, class: 'form-control', rows: 5 %>
